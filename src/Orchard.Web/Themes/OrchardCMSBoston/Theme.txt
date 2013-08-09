@@ -1,0 +1,7 @@
+﻿Name: Orchard CMS Boston
+Author: http://www.cloudconstruct.com
+Description: Orchard CMS Boston is a flexible multi-zone theme that provides a solid foundation to build your site. It features 20 collapsible widget zones and is flexible enough to cover a wide range of layouts.
+Version: 1.3.0
+Tags: Slick
+Website: http://www.cloudconstruct.com
+Zones: Header, Navigation, Featured, BeforeMain, AsideFirst, Messages, BeforeContent, Content, AfterContent, AsideSecond, AfterMain, TripelFirst, TripelSecond, TripelThird, FooterQuadFirst, FooterQuadSecond, FooterQuadThird, FooterQuadFourth, Footer

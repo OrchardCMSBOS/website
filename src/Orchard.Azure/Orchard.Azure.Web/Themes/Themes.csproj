@@ -56,6 +56,22 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="OrchardCMSBoston\Content\images\banners\home.png" />
+    <Content Include="OrchardCMSBoston\Content\images\banners\second-level.png" />
+    <Content Include="OrchardCMSBoston\Content\images\banners\welcome.png" />
+    <Content Include="OrchardCMSBoston\Content\images\layout\box.png" />
+    <Content Include="OrchardCMSBoston\Content\images\layout\content.png" />
+    <Content Include="OrchardCMSBoston\Content\images\layout\hr.png" />
+    <Content Include="OrchardCMSBoston\Content\images\layout\input-bg.png" />
+    <Content Include="OrchardCMSBoston\Content\images\layout\wrapper.png" />
+    <Content Include="OrchardCMSBoston\Content\images\logo.png" />
+    <Content Include="OrchardCMSBoston\Content\images\nav\on-leaf.png" />
+    <Content Include="OrchardCMSBoston\Scripts\base.js" />
+    <Content Include="OrchardCMSBoston\Scripts\equalheight.js" />
+    <Content Include="OrchardCMSBoston\Styles\Site.css" />
+    <Content Include="OrchardCMSBoston\Theme.png" />
+    <Content Include="OrchardCMSBoston\Theme.txt" />
+    <Content Include="OrchardCMSBoston\ThemeZonePreview.png" />
     <Content Include="TheAdmin\Scripts\admin.js" />
     <Content Include="TheAdmin\Styles\ie.css" />
     <Content Include="TheAdmin\Styles\ie7.css" />
@@ -159,6 +175,18 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="TheAdmin\Views\ErrorPage.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="OrchardCMSBoston\Content\Web.config" />
+    <Content Include="OrchardCMSBoston\Placement.info" />
+    <Content Include="OrchardCMSBoston\Scripts\Web.config" />
+    <Content Include="OrchardCMSBoston\Styles\Web.config" />
+    <Content Include="OrchardCMSBoston\Views\BadgeOfHonor.cshtml" />
+    <Content Include="OrchardCMSBoston\Views\Branding.cshtml" />
+    <Content Include="OrchardCMSBoston\Views\Layout.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="OrchardCMSBoston\Views\Parts\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
