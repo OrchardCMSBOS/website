@@ -1,0 +1,40 @@
+﻿@using System.Web.Mvc.Html
+@model OrchardBos.Meetup.Models.MeetupPart
+<fieldset>
+	<legend>Meetup Information</legend>
+
+	<div class="editor-label">@Html.LabelFor(x => x.GroupId)</div>
+	<div class="editor-field">
+		@Html.EditorFor(x => x.GroupId)
+		@Html.ValidationMessageFor(x => x.GroupId)
+	</div>
+	<div class="hint">Meetup Group ID</div>
+
+	<div class="editor-label">@Html.LabelFor(x => x.MeetupAPIUrl)</div>
+	<div class="editor-field">
+		@Html.TextBoxFor(x => x.MeetupAPIUrl, new { maxlength = 255 })
+		@Html.ValidationMessageFor(x => x.MeetupAPIUrl)
+	</div>
+	<div class="hint">API URL</div>
+    
+    	<div class="editor-label">@Html.LabelFor(x => x.ApiKey)</div>
+	<div class="editor-field">
+		@Html.TextBoxFor(x => x.ApiKey, new { maxlength = 255 })
+		@Html.ValidationMessageFor(x => x.ApiKey)
+	</div>
+	<div class="hint">Dev Key</div>
+
+    <div class="editor-label">@Html.LabelFor(x => x.FetchEnabled)</div>
+	<div class="editor-field">
+		@Html.EditorFor(x => x.FetchEnabled)
+		@Html.ValidationMessageFor(x => x.FetchEnabled)
+	</div>
+	<div class="hint">Enable/Disable Event Aggregation</div>
+
+	<div class="editor-label">@Html.LabelFor(x => x.FetchTimeOfDay)</div>
+	<div class="editor-field">
+		@Html.EditorFor(x => x.FetchTimeOfDay)
+		@Html.ValidationMessageFor(x => x.FetchTimeOfDay)
+	</div>
+	<div class="hint">Enter Fetch Time in UTC</div>
+</fieldset>

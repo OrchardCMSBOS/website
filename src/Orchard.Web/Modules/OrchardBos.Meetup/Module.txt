@@ -1,0 +1,12 @@
+﻿Name: Meetup
+AntiForgery: enabled
+Author: The Orchard CMS Boston Team
+Website: http://www.orchardcmsboston.org
+Version: 1.0
+OrchardVersion: 1.7
+Category: Social
+Description: A module to pull meeting information from Meetup.org.
+Features:
+    OrchardBos.Meetup:
+		Name: Meetup
+        Description: A module to pull meeting information from Meetup.org.

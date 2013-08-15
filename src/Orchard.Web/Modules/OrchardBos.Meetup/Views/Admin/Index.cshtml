@@ -1,0 +1,31 @@
+﻿@model OrchardBos.Meetup.ViewModels.MeetupAdminIndexViewModel
+@{
+    Style.Require("Admin");
+    Script.Require("ShapesBase");
+}
+
+<h1>@Html.TitleForPage(T("Manage Groups"))</h1>
+<div class="manage">@Html.ActionLink(T("Add a new Group").ToString(), "Create", new { area = "Contents", id = "MeetupGroup", returnurl = HttpContext.Current.Request.RawUrl }, new { @class = "button primaryAction" })</div>
+<table class="items" summary="@T("This is a table of the meetup groups in your application")">
+    <thead>
+        <tr>
+            <th scope="col">@T("Title")</th>
+            <th scope="col">@T("Group Id")</th>
+            <th scope="col">@T("Last Pull Date UTC")</th>
+            <th scope="col">@T("Next Run UTC")</th>
+            <th scope="col">&nbsp;&nbsp;</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var meetup in Model.Meetups) {
+            <tr>
+                <td>@Html.ItemEditLinkWithReturnUrl(Html.ItemDisplayText(meetup).ToString(), meetup)</td>
+                <td>@Html.ActionLink(!string.IsNullOrEmpty(meetup.GroupId) ? meetup.GroupId : "(not set)", "Data", new { controller = "admin", area = "OrchardBos.Meetup", id = meetup.Id })</td>
+                <td>@(meetup.LastAsOfDate == null ? "Never Ran" :  meetup.LastAsOfDate.ToString())</td>
+                <td>@(meetup.NextRun == null ? "Not scheduled" :  meetup.NextRun.ToString())</td>
+                <td>@Html.ActionLink("Force Run", "RunMeetupAggregation", new { controller = "admin", area = "OrchardBos.Meetup", id = meetup.Id })</td>
+            </tr>
+        }
+    </tbody>
+</table>
+@Display(Model.Pager)
