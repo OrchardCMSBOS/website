@@ -20,7 +20,7 @@
         @foreach (var meetup in Model.Meetups) {
             <tr>
                 <td>@Html.ItemEditLinkWithReturnUrl(Html.ItemDisplayText(meetup).ToString(), meetup)</td>
-                <td>@Html.ActionLink(!string.IsNullOrEmpty(meetup.GroupId) ? meetup.GroupId : "(not set)", "Data", new { controller = "admin", area = "OrchardBos.Meetup", id = meetup.Id })</td>
+                <td>@Html.ActionLink(!string.IsNullOrEmpty(meetup.GroupId) ? meetup.GroupId : "(not set)", "Listing", new { controller = "admin", area = "OrchardBos.Meetup", id = meetup.Id })</td>
                 <td>@(meetup.LastAsOfDate == null ? "Never Ran" :  meetup.LastAsOfDate.ToString())</td>
                 <td>@(meetup.NextRun == null ? "Not scheduled" :  meetup.NextRun.ToString())</td>
                 <td>@Html.ActionLink("Force Run", "RunMeetupAggregation", new { controller = "admin", area = "OrchardBos.Meetup", id = meetup.Id })</td>

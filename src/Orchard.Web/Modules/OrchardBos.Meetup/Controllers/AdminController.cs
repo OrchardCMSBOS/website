@@ -51,5 +51,33 @@ namespace OrchardBos.Meetup.Controllers
             return View(model);
         }
 
+        public ActionResult Listing(int id, PagerParameters pagerParameters)
+        {
+            var pager = new Pager(_site, pagerParameters);
+            var events = _meetupService.GetMeetupListing(id, pager.GetStartIndex(pager.Page), pager.PageSize, q => q.OrderByDescending(x => x.EventDate)).ToList();
+            var eventItemCount = _meetupService.CountEventData(id);
+            var pagerShape = Shape.Pager(pager).TotalItemCount(eventItemCount);
+            var model = new EventListingViewModel
+            {
+                EventId = id,
+                Meetings = events,
+                Pager = pagerShape
+            };
+
+            return View(model);
+        }
+
+        public ActionResult RunMeetupAggregation(int id)
+        {
+            MeetupPart meetup = _meetupService.GetMeetup(id);
+
+            if (meetup != null)
+            {
+                _meetupService.ProcessMeetupAggregation(meetup);
+            }
+
+            return RedirectToAction("Index");
+        }
+
     }
 }

@@ -46,12 +46,18 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\bin\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.ComponentModel.DataAnnotations">
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
     </Reference>
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Net" />
+    <Reference Include="System.Net.Http, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Mvc, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -88,13 +94,21 @@
   <ItemGroup>
     <Compile Include="AdminMenu.cs" />
     <Compile Include="Controllers\AdminController.cs" />
+    <Compile Include="Drivers\MeetingDisplayPartDriver.cs" />
     <Compile Include="Drivers\MeetupPartDriver.cs" />
+    <Compile Include="Handlers\MeetingDisplayPartHandler.cs" />
+    <Compile Include="Handlers\MeetingAggregationHandler.cs" />
     <Compile Include="Handlers\MeetupPartHandler.cs" />
     <Compile Include="Migrations.cs" />
+    <Compile Include="Models\MeetingDisplayPart.cs" />
+    <Compile Include="Models\MeetingDisplayPartRecord.cs" />
+    <Compile Include="Models\MeetingListingEntry.cs" />
     <Compile Include="Models\MeetupPartRecord.cs" />
     <Compile Include="Models\MeetupPart.cs" />
     <Compile Include="Services\MeetupService.cs" />
     <Compile Include="Services\IMeetupService.cs" />
+    <Compile Include="ViewModels\EventListingViewModel.cs" />
+    <Compile Include="ViewModels\MeetingDisplayWidgetViewModel.cs" />
     <Compile Include="ViewModels\MeetupAdminIndexViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -102,6 +116,15 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="placement.info" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Admin\Listing.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\EditorTemplates\Parts\MeetingDisplay.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Parts\MeetingDisplay.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
